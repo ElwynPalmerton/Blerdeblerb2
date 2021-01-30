@@ -140,7 +140,6 @@ function FeedPane(props) {
   }
 
 
-
   function getHistory(e) {
     let oldestBlerb = null; //= new Date();
     if (blerbs.length > 0) {

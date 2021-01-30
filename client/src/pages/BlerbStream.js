@@ -57,10 +57,12 @@ function BlerbStream(props) {
         setError(result.data.message);
       }
 
-
       if (result.data.likedBlerb) {
         props.likeBlerb(result.data.likedBlerb);
-
+        if (props.user === result.data.likedBlerb.owner._id) {
+          console.log('liking post.');
+          props.likePost(result.data.likedBlerb);
+        }
 
       } else if (result.data.message) {
         setError(result.data.message)
@@ -72,7 +74,6 @@ function BlerbStream(props) {
 
   return (
     <ErrorBoundary>
-
       <React.Fragment>
         {error && <p>error</p>}
         {(blerbs.length > 0) && blerbs.map((item, i) => {
@@ -95,7 +96,6 @@ const mapStateToProps = (state) => {
     feed: state.feedReducer,
     user
   };
-
 }
 
 const mapDispatchToProps = { likeBlerb, likePost, addBlerb, preLikeBlerb };

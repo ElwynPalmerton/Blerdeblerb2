@@ -49,6 +49,7 @@ export function likeBlerb(blerb) {
 }
 
 export function likePost(blerb) {
+  console.log('likePost action')
   return {
     type: "LIKE_POST",
     payload: blerb

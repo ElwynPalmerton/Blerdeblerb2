@@ -10,7 +10,6 @@ import styled from 'styled-components';
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
-      // margin: theme.spacing(1),
       marginTop: theme.spacing(4),
       textAlign: 'center'
     }

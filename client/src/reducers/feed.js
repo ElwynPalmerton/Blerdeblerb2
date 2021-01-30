@@ -14,13 +14,14 @@ function feedReducer(state = defaultState, action) {
         ...state,
         posts: [action.payload].concat(state.posts)
       });
+
     case 'INITIALIZE_POSTS':
       return ({
         ...state,
         initializedPosts: true,
         posts: action.payload,
-
       });
+
     case 'INITIALIZE_BLERBS':
       return ({
         ...state,
@@ -28,22 +29,26 @@ function feedReducer(state = defaultState, action) {
         blerbs: action.payload,
         lastUpdated: action.payload[0].createdAt
       });
+
     case 'ADD_BLERB':
       return ({
         ...state,
         blerbs: [action.payload].concat(state.blerbs)
       });
+
     case 'ADD_BLERBS':
       return ({
         ...state,
         blerbs: [...action.payload].concat(state.blerbs),
         lastUpdated: action.payload[0].createdAt
       });
+
     case 'ADD_HISTORY':
       return ({
         ...state,
         blerbs: state.blerbs.concat([...action.payload])
       })
+
     case 'LIKE_BLERB':
       return ({
         ...state,
@@ -55,10 +60,12 @@ function feedReducer(state = defaultState, action) {
           }
         })
       })
+
     case 'LIKE_POST':
+      console.log('Liking in reducer')
       return ({
         ...state,
-        blerbs: state.posts.map(blerb => {
+        posts: state.posts.map(blerb => {
           if (blerb._id === action.payload._id) {
             return action.payload;
           } else {
@@ -66,6 +73,7 @@ function feedReducer(state = defaultState, action) {
           }
         })
       })
+
     case 'PRE_LIKE_BLERB':
       return ({
         ...state,
