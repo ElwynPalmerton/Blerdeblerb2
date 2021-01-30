@@ -71,7 +71,7 @@ function StylesContext(props) {
     ].join(','),
   });
 
-  const theme = props.darkMode ? muiDarkTheme : muiLightTheme;
+  const theme = props.darkMode ? muiLightTheme : muiDarkTheme;
 
   return (
     <ThemeProvider theme={theme}>
