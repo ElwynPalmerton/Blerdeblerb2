@@ -26,7 +26,6 @@ const CustomSwitch = withStyles({
       backgroundColor: "#9782a8",     //track when on lightmode.
     },
   },
-  marginTop: "15px",
   checked: {},
   track: {},
 })(Switch);

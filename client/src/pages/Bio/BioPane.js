@@ -34,14 +34,12 @@ function BioPane(props) {
     !editMode ? (
       <ConnectedShowBio
         classes={props.classes}
-        // user={props.user}
         handleClick={() => setEditMode(true)}
       />
     ) : (
         <EditBio
           color="primary"
           classes={props.classes}
-          // user={props.user}
           handleSave={handleSave}
         />
       )

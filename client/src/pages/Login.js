@@ -95,7 +95,7 @@ function Login(props) {
             onChange={e => {
               setUserName(e.target.value);
             }}
-            defaultValue="Hello World" />
+          />
           <TextField required id="standard-basic"
             color="secondary"
             variant="outlined"
@@ -110,7 +110,7 @@ function Login(props) {
           <Button
             color="primary"
             variant="contained"
-            fullWidth="false"
+            fullWidth={false}
             className={classes.label}
             onClick={postLogin}
             type="submit"

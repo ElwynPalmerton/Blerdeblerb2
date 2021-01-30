@@ -107,10 +107,6 @@ function PostForm(props) {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {};
-}
-
 const mapDispatchToProps = { addPost, addBlerb };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
+export default connect(null, mapDispatchToProps)(PostForm);
