@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-// import axios from 'axios';
 import { useAuth } from '../context/auth';
-// import setTokens from '../utils/setTokens';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { login, } from '../actions/user';
 

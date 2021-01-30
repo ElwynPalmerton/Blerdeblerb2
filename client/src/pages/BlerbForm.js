@@ -5,7 +5,6 @@ import API from '../utils/API';
 import { addPost, addBlerb } from '../actions/feed';
 
 import Button from '@material-ui/core/Button';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 

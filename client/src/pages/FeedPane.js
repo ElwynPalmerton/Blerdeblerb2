@@ -5,10 +5,7 @@ import { initializeBlerbs, addHistory, addBlerbs } from '../actions/feed'
 import BlerbForm from './BlerbForm';
 import BlerbStream from './BlerbStream';
 import API from '../utils/API';
-// [ ] I need to refactor below or figure out how to fix the API helper util.
 import setHeaders from '../utils/setHeaders';
-// import axios from 'axios';
-// const querystring = require('querystring');
 import { DateTime } from 'luxon';
 
 import Button from '@material-ui/core/Button';
@@ -105,12 +102,7 @@ function FeedPane(props) {
 
 
   function getNewBlerbs(blerbs) {
-    // console.log("Triggered on scroll!");
 
-    // console.log("props.feed.blerbs: ", props.feed.blerbs);
-
-    // let lastUpdated = null; //= new Date();
-    // console.log("blerbs.length: ", props.feed.blerbs.length);
     if (props.feed.length > 0) {
 
       let lastUpdated = props.feed[0].createdAt;
@@ -154,8 +146,6 @@ function FeedPane(props) {
     if (blerbs.length > 0) {
       //Don't do the API call if it is empty since initialization should handle that.
       const oldestBlerb = blerbs[blerbs.length - 1].createdAt;
-
-      const oldestBlerbStr = DateTime.fromISO(oldestBlerb).toLocaleString(DateTime.DATETIME_SHORT);
 
       API({
         method: 'get',

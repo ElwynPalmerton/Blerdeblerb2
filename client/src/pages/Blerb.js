@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { DateTime } from 'luxon';
 import { connect } from 'react-redux';
 
@@ -158,6 +158,7 @@ function Blerb(props) {
                 </IconButton>
               </Grid>
               <Grid
+                item={true}
                 xs={9}
               >
                 {/* LIKE button */}

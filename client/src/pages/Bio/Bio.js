@@ -20,11 +20,6 @@ function Bio(props) {
 
   const classes = useStyles();
 
-  function handleClick(e) {
-
-    console.log('clicked');
-  }
-
   return (
     <div>
       <NavBar />
