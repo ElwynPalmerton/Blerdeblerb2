@@ -48,6 +48,13 @@ export function likeBlerb(blerb) {
   }
 }
 
+export function likePost(blerb) {
+  return {
+    type: "LIKE_POST",
+    payload: blerb
+  }
+}
+
 export function preLikeBlerb(userID) {
   return {
     type: "PRE_LIKE_BLERB",

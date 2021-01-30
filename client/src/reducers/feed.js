@@ -55,6 +55,17 @@ function feedReducer(state = defaultState, action) {
           }
         })
       })
+    case 'LIKE_POST':
+      return ({
+        ...state,
+        blerbs: state.posts.map(blerb => {
+          if (blerb._id === action.payload._id) {
+            return action.payload;
+          } else {
+            return blerb;
+          }
+        })
+      })
     case 'PRE_LIKE_BLERB':
       return ({
         ...state,

@@ -26,7 +26,6 @@ function BioPane(props) {
       console.log(e);
     });
 
-
     setEditMode(false);
   }
 

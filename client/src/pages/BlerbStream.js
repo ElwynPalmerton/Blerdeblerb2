@@ -4,7 +4,7 @@ import Blerb from './Blerb';
 import API from '../utils/API';
 // import setHeaders from '../utils/setHeaders';
 import { connect } from 'react-redux';
-import { likeBlerb, addBlerb, preLikeBlerb } from '../actions/feed';
+import { likeBlerb, likePost, addBlerb, preLikeBlerb } from '../actions/feed';
 import ErrorBoundary from './ErrorBoundary';
 import setHeaders from '../utils/setHeaders';
 //MUI
@@ -26,10 +26,8 @@ function BlerbStream(props) {
       postID: postID
     }).then(result => {
 
-      console.log("result: ", result);
       if (!result.data.error && result.data) {
         props.addBlerb(result.data);
-
       } else {
         setError(result.data.error);
         alert(error);
@@ -59,8 +57,11 @@ function BlerbStream(props) {
         setError(result.data.message);
       }
 
+
       if (result.data.likedBlerb) {
         props.likeBlerb(result.data.likedBlerb);
+
+
       } else if (result.data.message) {
         setError(result.data.message)
       }
@@ -89,9 +90,14 @@ function BlerbStream(props) {
 }
 
 const mapStateToProps = (state) => {
-  return { feed: state.feedReducer };
+  const user = state.loginReducer.userID;
+  return {
+    feed: state.feedReducer,
+    user
+  };
+
 }
 
-const mapDispatchToProps = { likeBlerb, addBlerb, preLikeBlerb };
+const mapDispatchToProps = { likeBlerb, likePost, addBlerb, preLikeBlerb };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BlerbStream);

@@ -28,20 +28,17 @@ const useStyles = makeStyles((theme) => ({
 
 
 function Profile(props) {
-  // [ ] You can't like your own blerbs from Profile
+  //You can't like your own blerbs from Profile
 
   const classes = useStyles();
 
-  // [ ]   -Fix error:
+  //-Fix error:
 
   // Line 53:6:  React Hook useEffect has a missing dependency: 'props'. Either include it or remove the dependency array. However, 'props' will change when *any* prop changes, so the preferred fix is to destructure the 'props' object outside of the useEffect call and refer to those specific props inside useEffect  react-hooks/exhaustive-deps.
-
-
 
   const location = useLocation();
   const userPosts = props.feed.posts;
   const [error, setError] = useState('');
-
 
   useEffect((initializedPosts) => {
     setHeaders();

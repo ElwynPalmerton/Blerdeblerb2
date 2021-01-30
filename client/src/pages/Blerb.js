@@ -153,7 +153,6 @@ function Blerb(props) {
                 >
                   <LoopIcon
                     value={props.blerb._id}
-
                     fontSize="inherit" />
                 </IconButton>
               </Grid>
@@ -180,6 +179,7 @@ function Blerb(props) {
                     )
                   }
                 </IconButton>
+
                 {/* Number of likes  */}
                 <span
                   className={classes.lightStyle}
