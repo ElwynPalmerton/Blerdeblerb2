@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Blerb from './Blerb';
 // import setHeaders from '../utils/setHeaders';
 import API from '../utils/API';

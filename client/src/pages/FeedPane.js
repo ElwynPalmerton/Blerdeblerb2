@@ -13,7 +13,7 @@ import { DateTime } from 'luxon';
 
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import { black } from 'chalk';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -111,16 +111,16 @@ function FeedPane(props) {
 
     // let lastUpdated = null; //= new Date();
     // console.log("blerbs.length: ", props.feed.blerbs.length);
-    if (props.feed.blerbs.length > 0) {
+    if (props.feed.length > 0) {
 
-      let lastUpdated = props.feed.blerbs[0].createdAt;
+      let lastUpdated = props.feed[0].createdAt;
       const formattedDate = DateTime.fromISO(lastUpdated).toLocaleString(DateTime.DATETIME_SHORT);
       console.log(formattedDate);
 
       const formattedPropDate = DateTime.fromISO(props.feed.lastUpdated).toLocaleString(DateTime.DATETIME_SHORT);
       console.log("props.feed.lastUpdated: ", formattedPropDate);
 
-      if (props.initializeBlerbs) {
+      if (props.initialized) {
 
 
         API({
@@ -208,7 +208,6 @@ function FeedPane(props) {
 
 const mapStateToProps = (state) => {
   const sortedFeed = state.feedReducer.blerbs.slice().sort((a, b) => {
-    console.log(new Date(b.createdAt));
     return new Date(b.createdAt) - new Date(a.createdAt);
   });
 

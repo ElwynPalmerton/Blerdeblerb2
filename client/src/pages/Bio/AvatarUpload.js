@@ -1,4 +1,3 @@
-import { Avatar } from '@material-ui/core';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import defaultUserAvatar from './assets/defaultUserAvatar.png';
@@ -6,7 +5,6 @@ import UploadImage from './UploadImage';
 import IconButton from '@material-ui/core/IconButton';
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
 import { makeStyles } from '@material-ui/core/styles';
-import { ThemeConsumer } from 'styled-components';
 import { baseURL } from '../../utils/API';
 
 const useStyles = makeStyles((theme) => ({
@@ -54,6 +52,7 @@ function AvatarUpload(props) {
 
 
       <img
+        alt="current user profile pic"
         style={tempStyle}
         src={imgUrl}
         onError={onImageError} />

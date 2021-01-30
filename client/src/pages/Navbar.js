@@ -8,13 +8,11 @@ import LogoutButton from './LogoutButton';
 
 //Material-UI
 import { withStyles, makeStyles } from '@material-ui/core/styles';
-import { green, blue, purple } from '@material-ui/core/colors'
 import AppBar from '@material-ui/core/AppBar';
 import Switch from '@material-ui/core/Switch';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import MenuListComponent from './MenuListComponent';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid'
 
 //Swithc for DarkMode

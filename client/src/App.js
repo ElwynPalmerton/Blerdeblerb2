@@ -5,7 +5,6 @@ import { createStore } from 'redux';
 import './App.css';
 
 ///PAGES
-import Home from './pages/Home';
 import Feed from './pages/Feed';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -25,9 +24,7 @@ import combinedReducers from './reducers/combinedReducers';
 
 import { AuthContext } from './context/auth';
 import setHeaders from './utils/setHeaders';
-
 import setTokens from './utils/setTokens';
-
 
 //Set up Redux store
 let store = createStore(combinedReducers);

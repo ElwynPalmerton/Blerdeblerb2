@@ -9,7 +9,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import LoopIcon from '@material-ui/icons/Loop';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
-import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid'
 
@@ -62,14 +61,12 @@ const useStyles = makeStyles((theme) => ({
 
 function Blerb(props) {
 
-  const [src, setSrc] = useState();
-
   const classes = useStyles();
 
   const date = props.blerb.createdAt;
   const formattedDate = DateTime.fromISO(date).toLocaleString(DateTime.DATETIME_SHORT);
 
-  const [likedByCurrentUser, setLikedByCurrentUser] = useState(false);
+  // const [likedByCurrentUser, setLikedByCurrentUser] = useState(false);
 
   let liked = false;
   //Applies the liked style to the liked output if the current user liked it.

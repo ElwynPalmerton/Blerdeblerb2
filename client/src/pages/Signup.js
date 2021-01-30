@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { AuthContext, useAuth } from '../context/auth';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { login } from '../actions/user';
 import API from '../utils/API';
@@ -14,7 +13,6 @@ import FormContainer from './FormContainer';
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
-// import { ThemeConsumer } from 'styled-components';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -69,8 +67,7 @@ function Signup(props) {
     console.log(userData);
 
     const devUrl = "/users/register";
-    // [ ] Replace with API
-    //const devUrl2 = "/user/register";
+
     API({
       method: 'post',
       url: devUrl,
