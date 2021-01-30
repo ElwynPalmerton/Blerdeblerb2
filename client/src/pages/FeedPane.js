@@ -23,10 +23,11 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function FeedPane(props) {
+  console.log(props);
 
   const classes = useStyles();
   const [error, setError] = useState('');
-  const blerbs = props.feed.blerbs;
+  const blerbs = props.feed;
 
   const [lastUpdated, setLastUpdated] = useState(null);
 
