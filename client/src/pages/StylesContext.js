@@ -13,7 +13,7 @@ function StylesContext(props) {
     palette: {
       type: "light",
       primary: {
-        main: "#8888ff",
+        main: "#5F00D8",
       },
       secondary: {
         main: "#9782a8",
@@ -43,6 +43,7 @@ function StylesContext(props) {
     palette: {
       type: "dark",
       primary: {
+        dark: "#5F00D8",
         main: "#8888ff",
       },
       secondary: {

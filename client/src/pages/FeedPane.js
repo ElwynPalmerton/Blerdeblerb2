@@ -206,9 +206,17 @@ function FeedPane(props) {
 }
 
 const mapStateToProps = (state) => {
-  //Get the username (and avatar) from the store.
+  const sortedFeed = state.feedReducer.blerbs.slice().sort((a, b) => {
+    console.log(new Date(b.createdAt));
+    return new Date(b.createdAt) - new Date(a.createdAt);
+  });
+
+
+  console.log("sorted Feed:", sortedFeed);
+
   return {
-    feed: state.feedReducer,
+    feed: sortedFeed,
+    // feed: state.feedReducer,
     initialized: state.feedReducer.initializedFeed,
   };
 }

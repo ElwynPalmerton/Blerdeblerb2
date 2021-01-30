@@ -1,4 +1,3 @@
-//Some of the stuff in App should be refactored into separate files.
 
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
@@ -39,10 +38,6 @@ function PostForm(props) {
   const [error, setError] = useState('');
 
   function handlePost(e) {
-
-    // const text = e.target.value;
-    // const editedText = text.slice(0, 180) //'abcde'
-    // setText(editedText);
 
     e.preventDefault();
 
@@ -114,14 +109,9 @@ function PostForm(props) {
 }
 
 const mapStateToProps = (state) => {
-  //I need the posts if I want to check against the last most recent post.
   return {};
 }
 
 const mapDispatchToProps = { addPost, addBlerb };
-// [ ] Add an action and reducer to add a post.
-// [ ] Profile should have an action and reducer to refresh the users posts on the page.
 
-
-// export default PostForm;
 export default connect(mapStateToProps, mapDispatchToProps)(PostForm);

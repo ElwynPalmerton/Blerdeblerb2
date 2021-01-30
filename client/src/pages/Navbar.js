@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     textDecoration: "none",
-    color: theme.palette.navText.main
+    color: theme.palette.primary.main
   },
   menuButton: {
     marginLeft: theme.spacing(6),

@@ -49,10 +49,6 @@ function Blerber(props) {
 
   return (
     <Box my={4}>
-      {/* <Paper
-        className={classes.root}
-      > */}
-
       <Paper
         className={classes.root}
       >

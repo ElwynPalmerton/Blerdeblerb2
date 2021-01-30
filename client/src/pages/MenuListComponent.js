@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
@@ -13,13 +13,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    marginLeft: "0.25rem"
+    marginLeft: "0.25rem",
+    color: theme.palette.primary.main
   },
   paper: {
     marginRight: theme.spacing(2),
   },
   menuButton: {
-    color: theme.palette.navText.main
+    color: theme.palette.yellow.main
   }
 }));
 
@@ -49,7 +50,7 @@ export default function MenuListComposition(props) {
 
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
-  React.useEffect(() => {
+  useEffect(() => {
     if (prevOpen.current === true && open === false) {
       anchorRef.current.focus();
     }
@@ -93,7 +94,8 @@ export default function MenuListComposition(props) {
                         pathname: "/bio",
                         state: { referer: props.from }
                       }}>
-                      <MenuItem onClick={handleClose}>
+                      <MenuItem
+                        onClick={handleClose}>
                         Bio
                     </MenuItem>
                     </Link>
