@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 
 
-const dbURI = 'mongodb://localhost:27017/social'
-// const dbURI = process.env.MONGODB_URI
+// const dbURI = 'mongodb://localhost:27017/social'
+const dbURI = process.env.MONGODB_URI
 
 const db = mongoose.connect(dbURI,
   {

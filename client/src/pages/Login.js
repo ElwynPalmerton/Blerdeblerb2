@@ -49,13 +49,7 @@ function Login(props) {
     referer = "/"
   }
 
-  // useEffect(() => {
-  //   console.log("referer: ", referer);
-  //   console.log("name: ", userName, "password: ", password);
-  // });
-
   function postLogin(e) {
-
 
     e.preventDefault();
 
